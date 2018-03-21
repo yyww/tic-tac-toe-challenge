@@ -1,7 +1,7 @@
 # Anaconda: Tic-Tac-Toe Coding Challenge
 Your mission, should you choose to accept it, is to implement a two-player game of Tic-tac-toe in the web browser.
 
-##Rules
+## Rules
 
 HONOR RULES: You must do this challenge on your own, without assistance or review from others, and without copying from the Internet. You will be asked to affirm that you developed your work independently.
 
@@ -9,7 +9,7 @@ TIME LIMIT: You have 3 days from the date you receive a link to this site. You m
 
 TASK: Your task it implement a simple but comprehensive REST API for a [tic-tac-toe game](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
-##Requirements
+## Requirements
 
 The basic requirements for the game are:
 
@@ -22,7 +22,7 @@ Since this is a coding challenge, the success of your mission depends on buildin
 
 Make sure to provide instruction about how to setup, run and consume your REST API.
 
-##Technologies
+## Technologies
 
 We prefer Python and the tornado framework, but they are not required. You can use whatever technology you prefer.
 

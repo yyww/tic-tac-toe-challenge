@@ -1,0 +1,131 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file for tic-tac-toe REST API
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /games:
+    get:
+      operationId: game.read_all
+      tags:
+        - games
+      summary: Read the entire list of games
+      description: Read the list of games
+      responses:
+        200:
+          description: Successfully read game list operation
+          schema:
+            type: array
+            items:
+              properties:
+                player1:
+                  type: string
+                player2:
+                  type: string
+                status:
+                  type: string
+
+    post:
+      operationId: game.create
+      tags:
+        - games
+      summary: Create a game and add it to the game list
+      description: Create a new game in the game list
+      parameters:
+        - name: game
+          in: body
+          description: Game to create
+          required: True
+          schema:
+            type: object
+            properties:
+              player1:
+                type: string
+                description: Name of player1 of game to create
+              player2:
+                type: string
+                description: Name of player2 of game to create
+      responses:
+        201:
+          description: Successfully created game in list
+
+  /games/{gameId}:
+    get:
+      operationId: game.read_one
+      tags:
+        - games
+      summary: Read one game from the game list
+      description: Read one game from the game list
+      parameters:
+        - name: gameId
+          in: path
+          description: ID of the game to get from the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read game from game list operation
+          schema:
+            type: array
+            items:
+              properties:
+                player1:
+                  type: string
+                player2:
+                  type: string
+                status:
+                  type: string
+
+    post:
+      operationId: game.update
+      tags:
+        - games
+      summary: Update a game in the game list
+      description: Update a game in the game list
+      parameters:
+        - name: gameId
+          in: path
+          description: ID of the game to update in the list
+          type: string
+          required: True
+        - name: game
+          in: body
+          schema:
+            type: object
+            properties:
+              player1:
+                type: string
+              player2:
+                type: string
+              result:
+                type: string
+              status0:
+                type: array
+              status1:
+                type: array
+      responses:
+        200:
+          description: Successfully updated game in game list
+
+    delete:
+      operationId: game.delete
+      tags:
+        - games
+      summary: Delete a game from the game list
+      description: Delete a game
+      parameters:
+        - name: gameId
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a game from game list
